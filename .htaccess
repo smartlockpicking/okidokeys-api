@@ -1,0 +1,26 @@
+RewriteEngine On    # Turn on the rewriting engine
+
+# login
+RewriteCond %{QUERY_STRING} ^page=smartphone\/login
+RewriteRule ^$ smartphone_login_keys.html    [NC,L]
+
+# get keys
+RewriteCond %{QUERY_STRING} ^page=smartphone\/login
+RewriteRule ^$ smartphone_login.html    [NC,L]
+
+
+# user list
+RewriteCond %{QUERY_STRING} ^page=user\/list 
+RewriteRule ^$ user_list.html    [NC,L] 
+
+# actuator (lock) list
+RewriteCond %{QUERY_STRING} ^page=actuator\/list 
+RewriteRule ^$ actuator_list.html    [NC,L] 
+
+# initialize crypto seed (sync)
+RewriteCond %{QUERY_STRING} ^page=smartphone\/sync 
+RewriteRule ^$ smartphone_sync.html    [NC,L] 
+
+# sync done
+RewriteCond %{QUERY_STRING} ^page=sync\/done 
+RewriteRule ^$ sync_done.html    [NC,L] 
